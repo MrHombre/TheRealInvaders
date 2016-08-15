@@ -27,7 +27,29 @@
     var aliens, dir, tank, bullets, cities;
 
 
-    function main() {};
+    function main() {
+      /* Screen size is 710 by 600. Multiples of 30 */
+      screen = new Screen(510, 600);
+      input = new InputHandeler();
+
+      var img = new Image();
+      img.addEventListener("load", function() {
+
+        /* alSprite will have to different versions of Sprites */
+        alSprite = [
+          [],
+          [],
+          []
+        ];
+        taSprite = new Sprite();
+        ciSprite = new Sprite();
+
+        int();
+        run();
+
+      });
+      img.src = "res/invaders.png";
+    };
 
     function init() {};
 
