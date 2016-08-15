@@ -18,12 +18,28 @@ Screen.prototype.drawSprite = function (sp, x, y) {
 
 //Sprite
 function Sprite(img, x, y, w, h) {
-
+  this.img = img;
+  this.x = x;
+  this.y = y;
+  this.w = w;
+  this.h = h;
 };
 
 
 // Input
-function InputHandeler() {};
+function InputHandeler() {
+  this.down = {};
+  this.pressed = {};
+
+  var _this = this;
+  document.addEventListener("keydown", function(evt) {
+    _this.down[evt.keyCode] = true;
+  });
+  document.addEventListener("keyup", function(evt) {
+    delete _this.down[evt.keyCode];
+    delete _this.pressed[evt.keyCode];
+  });
+};
 
 InputHandeler.prototype.isDown = function (code) {
 
