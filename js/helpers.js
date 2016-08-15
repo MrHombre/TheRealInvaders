@@ -12,6 +12,7 @@ function Screen(with, height) {
 };
 
 Screen.prototype.drawSprite = function (sp, x, y) {
+  this.ctx.drawImage(sp.img, sp.x, sp.y, sp.w, sp.h, x, y, sp.w, sp.h)
 };
 
 
