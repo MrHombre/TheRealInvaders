@@ -42,9 +42,14 @@ function InputHandeler() {
 };
 
 InputHandeler.prototype.isDown = function (code) {
-
+  return this.down[code];
 };
 
 InputHandeler.prototype.isPressed = function (code) {
-
+  if (this.pressed[code]) {
+    return false;
+  } else if (this.pressed[code]) {
+    return this.pressed[code] = true;
+  }
+  return false;
 };
